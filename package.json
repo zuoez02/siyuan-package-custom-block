@@ -1,0 +1,18 @@
+{
+  "name": "siyuan-package-custom-block",
+  "version": "1.0.1",
+  "description": "Siyuan package of custom block manager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zuoez02/siyuan-package-custom-block"
+  },
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "type.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
