@@ -21,6 +21,10 @@ class CarouselBlock extends CustomBlock {
   static type = "CarouselBlock";
   static css = ".hello { color: red; }";
 
+  onBlockMenu(e) {
+    // e.detail: BlocksElement, menu, protyle
+  }
+
   onMount(el, data, plugin) {
     console.log("hello world");
     el.insertAdjacentHTML(

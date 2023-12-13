@@ -1,0 +1,12 @@
+lockfileVersion: '6.0'
+
+devDependencies:
+  siyuan:
+    specifier: ^0.9.0
+    version: 0.9.0
+
+packages:
+
+  /siyuan@0.9.0:
+    resolution: {integrity: sha512-pE1zKCMErl9EOTxmGxT7YlgZe8tC5C0MgwVXL+zUrEaMUDUdMYK6XR0e9YHgSUY96VoTbtSkHpZinkNg1/8zaQ==}
+    dev: true
