@@ -46,3 +46,7 @@ module.exports = class P extends siyuan.Plugin {
   }
 };
 ```
+
+## Attention
+
+Update block is not working, still work on it.

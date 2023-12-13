@@ -1,6 +1,6 @@
 {
   "name": "siyuan-package-custom-block",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Siyuan package of custom block manager",
   "repository": {
     "type": "git",
