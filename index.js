@@ -34,7 +34,7 @@ class CustomBlockManager {
       }
       const block = new constructor({ plugin: this.plugin });
       const { id, content } = block._onBuild(type, data);
-      const ial = `{: custom-plugin-id="${plugin.name}" id="${content.id}"}`;
+      const ial = `{: custom-plugin-id="${this.plugin.name}" id="${content.id}"}`;
       const result = content + '\n' + ial;
       return { id, content, dom: content, ial, result };
     }
