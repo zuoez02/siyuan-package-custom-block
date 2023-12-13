@@ -11,7 +11,7 @@ class CustomBlockManager {
         throw new Error("block manager must init with plugin parameter");
       }
       this.plugin = plugin;
-      plugin.eventBus.on("loaded-protyle", () => this.handleChange());
+      plugin.eventBus.on("loaded-protyle-static", () => this.handleChange());
       plugin.eventBus.on("ws-main", () => this.handleChange());
     }
   
@@ -20,7 +20,6 @@ class CustomBlockManager {
     }
   
     static build(type, data) {
-      console.log(this.blockConstructors);
       const constructor = this.blockConstructors.get(type);
       if (!constructor) {
         throw new Error(
@@ -71,7 +70,7 @@ class CustomBlockManager {
           data = data ? JSON.parse(decodeURI(data)) : {};
           block = new constructor({ plugin: this.plugin });
           this.blocks.set(id, block);
-          block.onMount && block.onMount(blockEl, data);
+          block.onMount && block.onMount(blockEl, data, this.plugin);
           blockEl.setAttribute("style", "cursor: initial;");
           if (constructor.css) {
             blockEl.insertAdjacentHTML(

@@ -21,7 +21,7 @@ class CarouselBlock extends CustomBlock {
   static type = "CarouselBlock";
   static css = ".hello { color: red; }";
 
-  onMount(el, data) {
+  onMount(el, data, plugin) {
     console.log("hello world");
     el.insertAdjacentHTML(
       "afterbegin",
@@ -34,7 +34,7 @@ module.exports = class P extends siyuan.Plugin {
   onload() {
     CustomBlockManager.init(this);
     CustomBlockManager.load(CarouselBlock);
-    const content = CustomBlockManager.buildBlock("CarouselBlock", {
+    const content = CustomBlockManager.buildBlock(CarouselBlock.type, {
       name: "123",
     });
     console.log(content);

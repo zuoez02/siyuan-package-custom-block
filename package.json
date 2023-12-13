@@ -1,6 +1,6 @@
 {
   "name": "siyuan-package-custom-block",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Siyuan package of custom block manager",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["siyuan", "custom-block"],
+  "author": "zuoez02",
   "license": "MIT"
 }
