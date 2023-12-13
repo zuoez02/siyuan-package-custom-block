@@ -1,10 +1,9 @@
 import type { Plugin } from 'siyuan';
 
 declare module 'siyuan-package-custom-block' {
-    export class CustomBlock {
+    export abstract class CustomBlock {
         static el: HTMLElement;
         static type: string;
-        constructor(options: { plugin: Plugin });
         onMount(el: HTMLElement, data: any, plugin: Plugin): void;
     }
     export class CustomBlockManager {

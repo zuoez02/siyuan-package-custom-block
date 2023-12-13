@@ -17,6 +17,12 @@ class CustomBlockManager {
   
     static load(BlockConstructor) {
       this.blockConstructors.set(BlockConstructor.type, BlockConstructor);
+
+      this.plugin.eventBus.on('click-blockicon', (e) => {
+        if (e.detail.blockElements[0].getAttribute('custom-plugin-id') === this.plugin.name) {
+          BlockConstructor.onBlockMenu && BlockConstructor.onBlockMenu(e);
+        }
+      })
     }
   
     static build(type, data) {
@@ -28,14 +34,14 @@ class CustomBlockManager {
       }
       const block = new constructor({ plugin: this.plugin });
       const { id, content } = block._onBuild(type, data);
-      return { id, content };
+      const ial = `{: custom-plugin-id="${plugin.name}" id="${content.id}"}`;
+      const result = content + '\n' + ial;
+      return { id, content, dom: content, ial, result };
     }
   
     static buildBlock(type, data) {
-      const { id, content } = this.build(type, data);
-      const date = new Date();
-      const updated = `${date.getFullYear()}${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
-      return `${content}\n{: id="${id}" updated="${updated}"}\n`;
+      const { result } = this.build(type, data);
+      return result;
     }
   
     static handleChange() {

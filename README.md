@@ -38,6 +38,7 @@ module.exports = class P extends siyuan.Plugin {
       name: "123",
     });
     console.log(content);
+    navigator.clipboard.writeText(content);
   }
 };
 ```
