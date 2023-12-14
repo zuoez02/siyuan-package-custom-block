@@ -14,6 +14,7 @@ class CustomBlockManager {
     plugin.eventBus.on("loaded-protyle-static", (e) =>
       this.handleChange(e, "loaded-protyle-static")
     );
+    plugin.eventBus.on("ws-main", (e) => this.handleChange(e, "ws-main"));
   }
 
   static load(BlockConstructor) {
